@@ -1,0 +1,385 @@
+\chapter{Simetrías en la física de partículas}
+
+La física teórica moderna tiene como uno de sus pilares fundamentales el estudio de las diversas simetrías tanto en los sistemas físicos como en los elementos matemáticos utilizados para representarlos(\cite{cheng2000gauge}). El modelo estándar de la física de partículas está sustentado matemáticamente sobre las simetrías generadas mediante grupos, particularmente los grupos de Lie, que proporcionan una manera sólida de realizar ajustes a la teoría permitiendo establecer invarianzas en la forma funcional del lagrangiano que describe el sistema físico. Dichas simetrías son denominadas simetrías de gauge y son definidas mediante parámetros continuos y diferenciables puesto que de dicha forma es posible realizar transformaciones generales a partir de variaciones infinitesimales. 
+
+\section{Lagrangiano de partículas con spin 1/2}
+
+El lagrangiano correspondiente a una partícula masiva de spin 1/2 que se mueve libremente debe satisfacer la ecuación de Dirac(\cite{thomson2013modern}). Tomando
+
+\begin{equation}
+    \mathcal{L}(\psi, \partial \psi, \bar{\psi}, \partial \bar{\psi}) = i \bar{\psi}\gamma^{\mu}\partial_{\mu}\psi - \bar{\psi}m\psi
+    \label{Lag12}
+\end{equation}
+
+y aplicando las ecuaciones de Euler-Lagrange
+
+\begin{equation}
+    \partial_{\mu}\left( \frac{\partial \mathcal{L}}{\partial(\partial_{\mu} \phi)} \right) - \frac{\partial \mathcal{L}}{\partial \phi} = 0
+\end{equation}
+
+para el campo $\bar{\psi}$ se tiene que $\partial \mathcal{L}/\partial (\partial \bar{\psi}) = 0$ y $\partial \mathcal{L}/\partial \bar{\psi} = i\gamma^{\mu}\partial_{\mu} \psi - m\psi$, con lo que se obtiene
+
+\begin{equation}
+    i\gamma^{\mu}\partial_{\mu} \psi - m\psi = 0
+\end{equation}
+
+por lo que el lagrangiano de la ecuación \ref{Lag12} corresponde al lagrangiano de una partícula masiva de spin 1/2 que se mueve libremente.
+
+\section{Simetrias de gauge abelianas}
+
+\subsection{Invarianza de fase global}
+
+Como fue mencionado con anterioridad, es de particular interés estudiar la forma en que varía el lagrangiano de la ecuación \ref{Lag12} ante variaciones en la forma de la función de onda. Inicialmente se considera la transformación de la forma
+
+$$ \psi \quad \longrightarrow \quad \psi ' = e^{i\theta}\psi $$
+
+con $\theta$ real y constante. En dado caso
+
+$$ \bar{\psi} \quad \longrightarrow \quad \bar{\psi} ' = \bar{\psi}e^{-i\theta} $$
+
+por lo que el lagrangiano se transforma tal que
+
+$$ \mathcal{L} ( \psi, \partial \psi, \bar{\psi}, \partial \bar{\psi}) \quad \longrightarrow \quad \mathcal{L}' ( \psi', \partial \psi', \bar{\psi'}, \partial \bar{\psi'}) = i \bar{\psi'}\gamma^{\mu}\partial_{\mu}\psi' - \bar{\psi'}m\psi' $$
+
+\begin{equation}
+    \mathcal{L}' ( \psi', \partial \psi', \bar{\psi'}, \partial \bar{\psi'}) = i (\bar{\psi}e^{-i\theta})\gamma^{\mu}\partial_{\mu}(e^{i\theta}\psi) - (\bar{\psi}e^{-i\theta})m(e^{i\theta}\psi)
+    \label{u1}
+\end{equation}
+
+como $\theta$ es constante $\partial_{\mu}(e^{i\theta}\psi) = e^{i\theta}\partial_{\mu}(\psi)$ y como $\gamma^{\mu}e^{i\theta} = e^{i\theta}\gamma^{\mu}$ se tiene:
+
+\begin{equation}
+    \mathcal{L}' ( \psi', \partial \psi', \bar{\psi'}, \partial \bar{\psi'}) = i \bar{\psi}\gamma^{\mu}\partial_{\mu}\psi - \bar{\psi}m\psi = \mathcal{L} ( \psi, \partial \psi, \bar{\psi}, \partial \bar{\psi})
+\end{equation}
+
+por lo que se obtuvo que el lagrangiano permanece invariante bajo transformaciones globales de fase. Como fue mencionado anteriormente, el establecimiento de simetrías en la forma funcional de los elementos matemáticos que describen los sistemas físicos son realizados mediante conjuntos que satisfacen las condiciones de grupos; en este caso es posible mostrar que el elemento que genera la transformación, $e^{i\theta}$, forma un grupo.
+
+{\setlength{\parindent}{0 pt} \textbf{Demostración:} Rotulando el conjunto como U(1) = $\{e^{i\theta}\}$ para $\theta \in \mathbb{R}$, se tiene que el par (U(1), $\cdot$ ) se denomina grupo si cumple con la clausura, la asociatividad, contiene un elemento neutro en $\cdot$ y contiene un inverso multiplicativo\footnote{Apartir de un valor se define su inverso como el valor tal que multiplicados dan como resultado el elemento neutro.} para cada elemento del conjunto. Por lo que:}
+
+\textbf{1 Clausura.} Para dos elementos distintos del conjunto, $e^{i\theta_1}\in $U(1) y $e^{i\theta_2}\in $U(1), se tiene que el producto mediante la operación $\cdot$ es:
+
+$$ e^{i\theta_1} \cdot e^{i\theta_2} = e^{\theta_1 + \theta_2} = e^{i\theta_3} $$
+
+con $\theta_3 = \theta_1 + \theta_2$. Como la suma es cerrada en los números reales, se tiene que $e^{i\theta_3}\in $U(1), por lo que U(1) es cerrada bajo el producto $\cdot$.
+
+\textbf{2 Asociatividad:} Para tres elementos distintos del conjunto, $e^{i\theta_1}\in $U(1), $e^{i\theta_2}\in $U(1) y $e^{i\theta_3}\in $U(1), se tiene
+
+$$ (e^{i\theta_1}\cdot e^{i\theta_2})\cdot e^{i\theta_1} = e^{i\theta_1+\theta_2}\cdot e^{i\theta_3} = e^{i(\theta_1+\theta_2)+i\theta_3} = e^{i[(\theta_1+\theta_2)+\theta_3]} $$
+
+como la suma es asociativa sobre los números reales $(\theta_1+\theta_2)+\theta_3 = \theta_1+(\theta_2+\theta_3)$ entonces
+
+$$ (e^{i\theta_1}\cdot e^{i\theta_2})\cdot e^{i\theta_1} = e^{i[\theta_1+(\theta_2+\theta_3)]} = e^{i\theta_1}\cdot e^{i(\theta_2+\theta_3)} = e^{i\theta_1}\cdot (e^{i\theta_2}\cdot e^{i\theta_3}) $$
+
+por lo que 
+
+$$ (e^{i\theta_1}\cdot e^{i\theta_2})\cdot e^{i\theta_1} = e^{i\theta_1}\cdot (e^{i\theta_2}\cdot e^{i\theta_3}) $$
+
+\textbf{3 Elemento neutro:} Para $\theta = 0$ se tiene $e^{i\theta}=1$, por lo que U(1) tiene un elemento neutro.
+
+\textbf{4 Inverso:} $\forall$ $e^{i\theta}\in$ U(1) $\exists e^{-i\theta}\in$ U(1) con el cual $e^{i\theta}\cdot e^{-i\theta} = 1\in$ U(1).
+
+con esto, se demuestra que el par (U(1),$\cdot$) es un grupo.
+
+\raggedright
+$\hfill\square$
+\raggedright
+
+Por lo que se dice que el lagrangiano es invariante bajo transformaciones locales del grupo de simetría U(1). 
+
+\subsection{Invarianza de fase local}
+
+Se espera que para un sistema físico real la variación en la fase $\theta$ pueda variar en el espacio, tal que $\theta=\theta(\vec{x})$. Teniendo esto en consideración y partiendo de la ecuación \ref{u1}, se tiene que el factor $\partial_{\mu} (e^{i\theta(x)}\psi) = \partial_{\mu} (e^{i\theta(x)})\psi + e^{i\theta(x)}\partial_{\mu} (\psi) = e^{i\theta(x)} (i\partial_{\mu}(\theta(x))\psi + \partial_{\mu}\psi)  $. Remplazando:
+
+$$ \mathcal{L}' ( \psi', \partial \psi', \bar{\psi'}, \partial \bar{\psi'}) = i \bar{\psi}e^{-i\theta(x)}\gamma^{\mu}[e^{i\theta(x)}(i\partial_{\mu}(\theta(x))\psi + \partial_{\mu}\psi)]- \bar{\psi}m\psi $$
+
+distribuyendo
+
+$$ \mathcal{L}' ( \psi', \partial \psi', \bar{\psi'}, \partial \bar{\psi'}) = -\psi \gamma^{\mu}\partial_{\mu}(\theta(x))\psi + i \bar{\psi}\gamma^{\mu}\partial_{\mu}\psi - \bar{\psi}m\psi = -\psi \gamma^{\mu}\partial_{\mu}(\theta(x))\psi + \mathcal{L} ( \psi, \partial \psi, \bar{\psi}, \partial \bar{\psi}) $$
+
+por lo que el lagrangiano de la ecuación \ref{Lag12} no es invariante ante transformaciones locales de fase. Debido a esto es necesario realizar un cambio en el factor diferencial de la ecuación, i.e., remplazar la derivada, $\partial_{\mu}$, por la derivada covariante, $D_{\mu}$, la cual está definida mediante la expresión
+
+$$ \partial_{\mu} \quad \longrightarrow \quad D_{\mu} = \partial_{\mu} + iA_{\mu} $$
+
+donde el campo $A_{\mu}$ transforma tal que
+
+\begin{equation}
+    A_{\mu} \quad \longrightarrow \quad A_{\mu}' = A_{\mu} - \partial_{\mu}\theta(x)
+    \label{trab}
+\end{equation}
+
+por lo que el lagrangiano de la ecuación \ref{Lag12} es ahora expresado como
+
+$$ \mathcal{L}(\psi, \partial \psi, \bar{\psi}, \partial\bar{\psi}) = i\bar{\psi}\gamma^{\mu}D_{\mu}\psi - \bar{\psi}m\psi = i\bar{\psi}\gamma^{\mu}(\partial_{\mu} + iA_{\mu})\psi - \bar{\psi}m\psi $$
+
+$$ \mathcal{L}(\psi, \partial \psi, \bar{\psi}, \partial\bar{\psi}) = i\bar{\psi}\gamma^{\mu}\partial_{\mu}\psi - \bar{\psi}m\psi - \bar{\psi}\gamma^{\mu}A_{\mu}\psi $$
+
+realizando ahora una transformación local de fase, tal que $\psi \longrightarrow \psi'=e^{i\theta(x)}\psi$ y $A_{\mu}\longrightarrow A_{\mu}' = A_{\mu} - \partial_{\mu}\theta(x) $ se tiene
+
+$$\mathcal{L}(\psi, \partial \psi, \bar{\psi}, \partial\bar{\psi}) \longrightarrow \mathcal{L}'(\psi', \partial \psi', \bar{\psi}', \partial\bar{\psi}') = i\bar{\psi}'\gamma^{\mu}\partial_{\mu}\psi' - \bar{\psi}'m\psi' - \bar{\psi}'\gamma^{\mu}A'_{\mu}\psi' $$
+
+remplazando
+
+$$ \mathcal{L}'(\psi', \partial \psi', \bar{\psi}', \partial\bar{\psi}') = i\bar{\psi}e^{-i\theta(x)} \gamma^{\mu}\partial_{\mu}(e^{i\theta(x)} \psi) - \bar{\psi}'e^{-i\theta(x)} m e^{i\theta(x)} \psi - \bar{\psi}e^{-i\theta(x)}\gamma^{\mu}(A_{\mu} - \partial_{\mu}(\theta(x)))e^{i\theta(x)}\psi $$
+
+$$\mathcal{L}'(\psi', \partial \psi', \bar{\psi}', \partial\bar{\psi}') = -\psi \gamma^{\mu}\partial_{\mu}(\theta(x))\psi + i \bar{\psi}\gamma^{\mu}\partial_{\mu}\psi - \bar{\psi}m\psi - \bar{\psi}e^{-i\theta(x)}\gamma^{\mu}A_{\mu}e^{i\theta(x)}\psi + \bar{\psi}e^{-i\theta(x)}\gamma^{\mu}\partial_{\mu}(\theta(x))e^{i\theta(x)}\psi $$
+
+simplificando
+
+$$ \mathcal{L}'(\psi', \partial \psi', \bar{\psi}', \partial\bar{\psi}') = i\bar{\psi}\gamma^{\mu}\partial_{\mu}\psi - \bar{\psi}m\psi - \bar{\psi}\gamma^{\mu}A_{\mu}\psi $$
+
+$\mathcal{L}' = \mathcal{L} $, por lo que el lagrangiano es invariante bajo transformaciones locales de fase si es introducida la derivada covariante y una transformación adecuada para el campo en el nuevo factor de la derivada. Por lo que el lagrangiano se constituye ahora por un término cinético, un término correspondiente a la masa y un término correspondiente a la interacción entre el fermión y el campo. Para una descripción apropiada, es necesario introducir un término correspondiente al componente cinético del campo $A_{\mu}$. Asumiendo dicho campo como el campo que describe un fotón (mediador de la interacción electromagnética), se tiene que el término cinético es $-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}$ donde $F^{\mu\nu} = \partial^{\mu}A^{\nu} - \partial^{\nu}A^{\mu}$. Por lo tanto, es necesario que el término sea invariante para que el lagrangiano sea invariante ante su adición. Ante una transformación local generada por el grupo U(1), el factor cinético del campo vectorial transforma de la siguiente forma
+
+$$ -\frac{1}{4}F'^{\mu\nu}F'_{\mu\nu} = -\frac{1}{4}(\partial^{\mu}A'^{\nu} - \partial^{\nu}A'^{\mu})(\partial_{\mu}A'_{\nu} - \partial_{\nu}A'_{\mu}) $$
+
+como $A_{\mu}' = A_{\mu} - \partial_{\mu}\theta(x)$ 
+
+$$ -\frac{1}{4}F'^{\mu\nu}F'_{\mu\nu} = -\frac{1}{4}[\partial^{\mu}(A^{\nu} - \partial^{\nu}\theta(x)) - \partial^{\nu}(A^{\mu} - \partial^{\mu}\theta(x))][\partial_{\mu}(A_{\nu} - \partial_{\nu}\theta(x)) - \partial_{\nu}(A_{\mu} - \partial_{\mu}\theta(x))] $$
+
+$$ -\frac{1}{4}F'^{\mu\nu}F'_{\mu\nu} = -\frac{1}{4}[\partial^{\mu}A^{\nu} - \partial^{\mu\nu}\theta(x) - \partial^{\nu}A^{\mu} + \partial^{\nu\mu}\theta(x)][\partial_{\mu}A_{\nu} - \partial_{\mu\nu}\theta(x) - \partial_{\nu}A_{\mu} + \partial_{\nu\mu}\theta(x)] $$
+
+como $\partial_{\mu\nu}\theta(x) = \partial_{\nu\mu}\theta(x)$
+
+$$ -\frac{1}{4}F'^{\mu\nu}F'_{\mu\nu} = -\frac{1}{4}F^{\mu\nu}F_{\mu\nu} $$
+
+con esto, se tiene que el lagrangiano toma la forma
+
+\begin{equation}
+    \mathcal{L}(\psi', \partial \psi', \bar{\psi}', \partial\bar{\psi}') =  i\bar{\psi}\gamma^{\mu}\partial_{\mu}\psi - \bar{\psi}m\psi - \bar{\psi}\gamma^{\mu}A_{\mu}\psi -\frac{1}{4}F^{\mu\nu}F_{\mu\nu}
+\end{equation}
+
+que es invariante bajo transformaciones locales de fase. Si se introduce este lagrangiano en las ecuaciones de Euler-Lagrange respecto al campo $A_{\mu}$ se obtiene la ecuación
+
+\begin{equation}
+    \partial_{\mu}F^{\mu\nu}  = j^{\nu}
+\end{equation}
+
+donde $j^{\nu} = \bar{\psi}\gamma^{\nu}\psi$. Esta es la forma covariante de las ecuaciones de Maxwell, por lo que la teoría electrodinámica puede ser derivada de la simetría local de gauge en U(1) de un lagrangiano que satisface la ecuación de Dirac. De forma similar es posible reproducir este resultado con los grupos de simetría SU(2), con la salvedad de que los generadores del grupo no conmutan, por lo que la transformación de los campos generados por la simetría no va a ser independiente, i.e., la manera en que transforma un campo depende de los demás campos. las simetrías con respecto a los grupos SU(2) y SU(3) generan los mediadores de las interacciones débil y fuerte, respectivamente.
+
+\subsection{Masa de los campos de gauge}
+
+La consideración de que los campos de gauge presenten masa implica la adición de un término en lagrangiano, dependiente de la masa del campo. Para el caso de la simetría U(1), el término sería de la forma $\frac{1}{2}m_{\gamma}A_{\mu}A^{\mu}$, con $m_{\gamma}$ la masa del fotón. Aplicando una transformación U(1), se tiene que este término transforma como
+
+$$ \frac{1}{2}m_{\gamma}A_{\mu}A^{\mu} \longrightarrow \frac{1}{2}m_{\gamma}A'_{\mu}A'^{\mu} = \frac{1}{2}m_{\gamma}(A_{\mu} - \partial_{\mu}\theta(x))(A_{\mu} - \partial_{\mu}\theta(x)) \neq \frac{1}{2}m_{\gamma}A_{\mu}A^{\mu} $$
+
+por lo que el término de masa en el lagrangiano no es invariante ante transformaciones del grupo U(1). Por lo que la consideración de la masa del campo de gauge no es consistente con esta teoría. Esto no representa un problema para la interacción electromagnética y para la interacciones fuerte, cuyos bosones mediadores carecen de masa. Sin embargo sí representa un problema para el caso de la interacción débil pues experimentalmente se ha mostrado que sus bosones mediadores no solo presentan masa sino que ésta es particularmente grande. 
+
+\section{Simetrías de gauge no abelianas}
+
+Si bien para el caso del grupo U(1) los generadores del grupo conmutan (pues se trata de números complejos), no es este el caso para todos los grupos de simetría de interés. Para el caso del grupo $SU(2)$, los generadores del grupo pueden ser expresados mediante las matrices de Pauli
+
+$$ T_i = \frac{1}{2}\sigma_i $$
+
+donde $T_i$ son los generadores del grupo y $\sigma_i$ las matrices de Pauli para $i=1,2,3$. Por lo que los generadores cumplen la relación de conmutación
+
+$$ [T_i, T_j] = \frac{1}{4}[\sigma_i, \sigma_j] = \frac{1}{4}2i\epsilon_{ijk}\sigma_k = i\epsilon_{ijk}T_k $$
+
+donde $\epsilon_{ijk}$ es el tensor de Levi-Civita. En general, para cualquier grupo de simetría no abeliano la relación de conmutación puede ser expresada mediante la constante de estructura del grupo, $f_{ijk}$, definida como 
+
+$$ [T_i, T_j] = if_{ijk}T_k $$
+
+Una transformación local de gauge infinitesimal del grupo SU(2) puede ser expresada como
+
+$$ \varphi = \begin{pmatrix}
+    \nu_e(x) \\
+    e(x)\\
+\end{pmatrix} \quad \longrightarrow \quad \varphi'(x) = (I + ig\boldsymbol\alpha (x) \cdot \textbf{T})\varphi(x) $$
+
+y la transformación del doblete adjunto $\bar{\varphi}(x) = \varphi^{\dagger}\gamma^0$
+
+$$ \bar{\varphi} \quad \longrightarrow \quad \bar{\varphi}'(x) = \bar{\varphi}(x)(I - ig\boldsymbol\alpha (x) \cdot \textbf{T}) $$
+
+Tomando el lagrandiano sin términos asociados a las masas
+
+$$ \mathcal{L} = i\bar{\varphi}\gamma^{\mu}\partial_{\mu}\varphi = i\bar{\nu}_e\gamma^{\mu}\partial_{\mu}\nu_e + i\bar{e}\gamma^{\mu}\partial_{\mu}e$$
+
+nuevamente, para obtener una simetría de gauge es necesario realizar un cambio de la derivada parcial por la derivada covariante asociada al grupo de simetría, que resulta
+
+$$ \partial_{\mu} \quad \longrightarrow \quad D_{\mu} = \partial_{\mu} + ig\textbf{W}^{\mu}\cdot \textbf{T} $$
+
+donde $\textbf{W} = \{W_1,W_2,W_3\}$ son los campos de gauge de la simetría SU(2). Con esto, el lagrangiano queda
+
+$$ \mathcal{L} = i\bar{\varphi}\gamma^{\mu}(\partial_{\mu} + ig\textbf{W}^{\mu}\cdot \textbf{T})\varphi $$
+
+la invarianza de gauge del lagrangiano se da en el caso en que el factor $D'_{\mu}\varphi'$ transforma de la misma forma en que lo hace la función $\varphi$
+
+\begin{equation}
+    D'_{\mu}\varphi' = (I + ig\boldsymbol\alpha (x) \cdot \textbf{T})D_{\mu}\varphi
+    \label{tr}
+\end{equation}
+
+en este caso
+
+$$ \bar{\varphi}' D'_{\mu}\varphi' =\bar{\varphi} (I - ig\boldsymbol\alpha (x) \cdot \textbf{T})(I + ig\boldsymbol\alpha (x) \cdot \textbf{T})D_{\mu}\varphi = \bar{\varphi} D_{\mu}\varphi + \mathcal{O}(g^2\alpha^2) $$
+
+dado que
+
+$$ D'_{\mu} = \partial_{\mu} + ig\textbf{W}'_{\mu}\cdot\textbf{T} $$
+
+el factor $D'_{\mu}\varphi'$ resulta
+
+$$ D'_{\mu}\varphi' = (\partial_{\mu} + ig\textbf{W}'_{\mu}\cdot\textbf{T})(I + ig\boldsymbol\alpha (x) \cdot \textbf{T})\varphi $$
+
+igualando con el lado derecho de la ecuación \ref{tr}, se obtiene
+
+$$ (\partial_{\mu} + ig\textbf{W}'_{\mu}\cdot\textbf{T})(I + ig\boldsymbol\alpha (x) \cdot \textbf{T})\varphi = (I + ig\boldsymbol\alpha (x) \cdot \textbf{T})D_{\mu}\varphi $$
+
+$$ (\partial_{\mu} + ig\textbf{W}'_{\mu}\cdot\textbf{T})(I + ig\boldsymbol\alpha (x) \cdot \textbf{T})\varphi = (I + ig\boldsymbol\alpha (x) \cdot \textbf{T})(\partial_{\mu} + ig\textbf{W}_{\mu}\cdot\textbf{T})\varphi $$
+
+expandiendo los términos
+
+$$ \partial_{\mu} + ig\partial_{\mu}(\boldsymbol\alpha)\cdot \textbf{T} + ig\textbf{W}'_{\mu}\cdot \textbf{T} - g^2(\textbf{W}'_{\mu}\cdot \textbf{T})(\boldsymbol\alpha \cdot\textbf{T}) = \partial_{\mu}+ig\textbf{W}_{\mu}\cdot\textbf{T}  -g^2(\boldsymbol\alpha\cdot\textbf{T})(\textbf{W}'_{\mu}\cdot\textbf{T}) $$
+
+$$ig\partial_{\mu}(\boldsymbol\alpha)\cdot \textbf{T} + ig\textbf{W}'_{\mu}\cdot \textbf{T} - g^2(\textbf{W}'_{\mu}\cdot \textbf{T})(\boldsymbol\alpha \cdot\textbf{T}) =ig\textbf{W}_{\mu}\cdot\textbf{T}  -g^2(\boldsymbol\alpha\cdot\textbf{T})(\textbf{W}_{\mu}\cdot\textbf{T}) $$
+
+si se asume una transformación idéntica a la presentada para el caso U(1)
+
+$$ W_{k}^{\mu} \longrightarrow W_{k}^{'\mu} = W_{k}^{\mu} -\partial^{\mu} \alpha_{k} $$
+
+no se obtiene una invarianza en la transformación debido a que el factor $(\boldsymbol\alpha\cdot\textbf{T})(\textbf{W}_{\mu}\cdot\textbf{T})$ no conmuta. Para preservar la simetría la transformación de los campos $W$ no deben ser independientes
+
+$$ W_k^{\mu} \longrightarrow W_k^{'\mu} = W_k^{\mu} -\partial^{\mu} \alpha_k -g a_{ijk}\alpha_i W_j^{\mu} $$
+
+donde $a_{ijk}$ debe ser identificado. Escribiendo la relación mostrando los índices de forma explícita
+
+$$ ig\partial_{\mu}(\alpha_k)T_k + igW_{\mu k}^{'}T_k - g^2W_{\mu k }^{'}T_k\alpha_lT_l = igW_{\mu k}T_k - g^2 \alpha_kT_kW_{\mu l}T_l $$
+
+reemplazando
+
+\begin{multline}
+   ig\partial_{\mu}(\alpha_k)T_k + igW_{\mu k}T_k - ig\partial_{\mu}(\alpha_k)T_k - ig^2a_{ijk}\alpha_iW_{\mu j}T_k - g^2W_{\mu k }T_k\alpha_lT_l + g^2\partial_{\mu}(\alpha_k)T_k\alpha_lT_l + g^3a_{ijk}\alpha_i W_{\mu j}T_k\alpha_lT_l \\
+   = igW_{\mu k}T_k - g^2 \alpha_kT_kW_{\mu l}T_l 
+\end{multline}
+
+cancelando términos y despejando
+
+$$ - ig^2a_{ijk}\alpha_iW_{\mu j}T_k = g^2(W_{\mu k }T_k\alpha_lT_l -\alpha_kT_kW_{\mu l}T_l) + \mathcal{O}(g^2\alpha^2) $$
+
+cambiando la rotulación de los índices mudos en el segundo término del lado derecho del igual 
+
+$$ - ig^2a_{ijk}\alpha_iW_{\mu j}T_k = g^2(W_{\mu k }T_k\alpha_lT_l -\alpha_lT_lW_{\mu k}T_k) = -g^2 W_{\mu k }\alpha_l (T_lT_k - T_kT_l)$$
+
+$$ - ig^2a_{ijk}\alpha_iW_{\mu j}T_k = -g^2 W_{\mu k }\alpha_l[T_l, T_k] = -g^2 W_{\mu k }\alpha_l(if_{lkm}T_m) $$
+
+por lo que $a_{ijk}$ es igual a la constante de estructura del grupo generador de simetría. En el caso del grupo SU(2), $f_{ijk}=\epsilon_{ijk}$. Con esto, para el grupo de simetría SU(2), los campos de gauge transforman
+
+\begin{equation}
+    W_k^{\mu} \longrightarrow W_k^{'\mu} = W_k^{\mu} -\partial^{\mu} \alpha_k -g \epsilon_{ijk}\alpha_i W_j^{\mu} 
+    \label{trnab}
+\end{equation}
+
+esta transformación deja invariante el lagrangiano de un fermión ante transformaciones de un grupo de gauge no abeliano, sin embargo, dada la presencia de los campos de guage generados por la transformación, es necesario añadir al lagrangiano un factor cinético para los mismos. Sin embargo intentar replicar la forma del caso abeliano no cumple con la invarianza, por lo que el factor cinético debe ser hallado notando que el campo $F^{\mu\nu}$ para el caso U(1) puede ser expresado en términos de la derivada covariante como
+
+$$ F^{\mu\nu} = \frac{1}{iq}[D^{\mu}, D^{\nu}] $$
+
+replicando la misma expresión con la derivada covariante para grupos no abelianos
+
+$$ \frac{1}{ig}[D^{\mu}, D^{\nu}] = \frac{1}{ig}[\partial^{\mu} + ig\textbf{T}\cdot \textbf{W}^{\mu}, \partial^{\nu} + ig\textbf{T}\cdot \textbf{W}^{\nu}] $$
+
+$$ \frac{1}{ig}[D^{\mu}, D^{\nu}] = \textbf{T}\cdot(\partial^{\mu}\textbf{W}^{\nu} - \partial^{\nu}\textbf{W}^{\mu}) + ig[(\textbf{T}\cdot \textbf{W}^{\mu})(\textbf{T}\cdot \textbf{W}^{\nu}) - (\textbf{T}\cdot \textbf{W}^{\nu})(\textbf{T}\cdot \textbf{W}^{\mu})] $$
+
+tomando el factor del segundo término del lado derecho del igual
+
+$$ (\textbf{T}\cdot \textbf{W}^{\mu})(\textbf{T}\cdot \textbf{W}^{\nu}) - (\textbf{T}\cdot \textbf{W}^{\nu})(\textbf{T}\cdot \textbf{W}^{\mu}) = T_iW_i^{\mu}T_jW_j^{\nu} - T_iW_i^{\nu}T_jW_j^{\mu} $$
+
+cambiando los índices en el segundo términos tomando factor común
+
+$$ (\textbf{T}\cdot \textbf{W}^{\mu})(\textbf{T}\cdot \textbf{W}^{\nu}) - (\textbf{T}\cdot \textbf{W}^{\nu})(\textbf{T}\cdot \textbf{W}^{\mu}) = W_i^{\mu}W_j^{\nu}(T_iT_j - T_jT_i) = W_i^{\mu}W_j^{\nu}[T_i,T_j] =i\epsilon_{ijk}W_i^{\mu}W_j^{\nu}T_k $$
+
+$$ (\textbf{T}\cdot \textbf{W}^{\mu})(\textbf{T}\cdot \textbf{W}^{\nu}) - (\textbf{T}\cdot \textbf{W}^{\nu})(\textbf{T}\cdot \textbf{W}^{\mu}) = i \textbf{T}\cdot (\textbf{W}^{\mu}\times \textbf{W}^{\nu}) $$
+
+remplazando 
+
+$$ \frac{1}{ig}[D^{\mu}, D^{\nu}] = \textbf{T}\cdot(\partial^{\mu}\textbf{W}^{\nu} - \partial^{\nu}\textbf{W}^{\mu} - g\textbf{W}^{\mu}\times \textbf{W}^{\nu}) \equiv \textbf{T}\cdot \textbf{W}^{\mu\nu}\equiv W^{\mu\nu} $$
+
+con
+
+$$ \textbf{W}^{\mu\nu} = \partial^{\mu}\textbf{W}^{\nu} - \partial^{\nu}\textbf{W}^{\mu} - g\textbf{W}^{\mu}\times \textbf{W}^{\nu} \quad \text{y} \quad W^{\mu\nu} = \textbf{T}\cdot\textbf{W}^{\mu\nu} $$
+
+un término invariante para el factor cinético del boson puede ser obtenido mediante la traza de $W^{\mu\nu}$
+
+$$ \mathcal{L}_W \propto \text{Tr}(W^{\mu\nu}W_{\mu\nu})=\text{Tr}[(\boldsymbol\sigma \cdot \textbf{W}^{\mu\nu})(\boldsymbol\sigma \cdot \textbf{W}^{\mu\nu})] $$
+
+utilizando la identidad $(\boldsymbol\sigma \cdot \textbf{a})(\boldsymbol\sigma \cdot \textbf{b}) = (\textbf{a}\cdot\textbf{b})I + i\boldsymbol\sigma \cdot (\textbf{a}\times \textbf{b})$(\cite{thomson2013modern})
+
+$$ \mathcal{L}_W \propto \text{Tr}(\textbf{W}^{\mu\nu}\cdot\textbf{W}_{\mu\nu}I) = 2\textbf{W}^{\mu\nu}\cdot\textbf{W}_{\mu\nu}  $$
+
+la invarianza de este factor ante una transformación $U$ va ligada a la invarianza de la derivada covariante donde $D^{\mu}\rightarrow D^{'\mu}=UD^{\mu}U^{-1}$. Esto implica que $\textbf{W}^{'\mu\nu} = U\textbf{W}^{\mu\nu}U^{-1}$ por lo que 
+
+$$ \text{Tr}(\textbf{W}^{'\mu\nu}\textbf{W}_{\mu\nu}^{'}) = \text{Tr}(\textbf{W}^{\mu\nu}\textbf{W}_{\mu\nu}) $$
+
+por lo que el término cinético del lagrangiano que es invariante de gauge viene dado por
+
+$$ \mathcal{L}_W = -\frac{1}{4}\textbf{W}^{\mu\nu}\cdot \textbf{W}_{\mu\nu} $$
+
+expandiendo
+
+$$ \mathcal{L}_W = -\frac{1}{4}(\partial^{\mu}\textbf{W}^{\nu} - \partial^{\nu}\textbf{W}^{\mu} - g\textbf{W}^{\mu}\times \textbf{W}^{\nu})\cdot (\partial_{\mu}\textbf{W}_{\nu} - \partial_{\nu}\textbf{W}_{\mu} - g\textbf{W}_{\mu}\times \textbf{W}_{\nu}) $$
+
+$$ \mathcal{L}_W = -\frac{1}{4}(\partial^{\mu}W_i^{\nu} - \partial^{\nu}W_i^{\mu} - g\epsilon_{ijk}W_j^{\mu} W_k^{\nu})\cdot (\partial_{\mu}W_{i\nu} - \partial_{\nu}W_{i\mu} - g\epsilon_{ijk}W_{j\mu} W_{k\nu}) $$
+
+\begin{equation}
+    \mathcal{L}_W = -\frac{1}{4}(\partial^{\mu}W_i^{\nu} - \partial^{\nu}W_i^{\mu})(\partial_{\mu}W_{i\nu} - \partial_{\nu}W_{i\mu}) + \frac{g}{2}(\partial^{\mu}W_i^{\nu} - \partial^{\nu}W_i^{\mu})\epsilon_{ijk}W_{j\mu}W_{k\nu} -\frac{1}{4}g^2\epsilon_{ijk}\epsilon_{imn}W_j^{\mu}W_k^{\nu}W_{m\mu}W_{n\nu} 
+    \label{lancinc}
+\end{equation}
+
+por lo que el lagrangiano puede ser separado en dos términos: un factor cinético y un factor de interacción de los campos de gauge, $\mathcal{L}_W = \mathcal{L}_{\text{cin}}+\mathcal{L}_{\text{int}}$ con
+
+$$ \mathcal{L}_{\text{cin}} = -\frac{1}{4}(\partial^{\mu}W_i^{\nu} - \partial^{\nu}W_i^{\mu})(\partial_{\mu}W_{i\nu} - \partial_{\nu}W_{i\mu}) $$
+
+$$ \mathcal{L}_{\text{int}} = \frac{g}{2}(\partial^{\mu}W_i^{\nu} - \partial^{\nu}W_i^{\mu})\epsilon_{ijk}W_{j\mu}W_{k\nu} -\frac{1}{4}g^2\epsilon_{ijk}\epsilon_{imn}W_j^{\mu}W_k^{\nu}W_{m\mu}W_{n\nu} $$
+
+donde en $\mathcal{L}_{\text{int}}$ el primer término corresponde a la interacción de tres bosones mientras que el segundo a la interacción de cuatro bosones. De esta forma es posible desarrollar una teoría de gauge para el caso en que los generadores del grupo de simetría no conmutan.
+
+\section{Simetrías discretas.}
+
+\subsection{Simetría P}
+
+El comportamiento de los sistemas físicos ante reflexiones espaciales es de gran interés en la física de partículas puesto que supone una posible simetría fundamental. Inicialmente, es importante considerar que el comportamiento de los distintos factores del sistema ante reflexiones espaciales depende de su naturaleza y son clasificados según ésta. Para el caso de un vector tridimensional, se dice que éste es un vector polar si ante una reflexión espacial la representación del vector se ve modificada por un signo (por ejemplo, la cantidad de movimiento). Si, por el contrario, la representación de un vector es dejada invariante ante una reflexión espacial se dice que dicho vector es un vector axial (por ejemplo, la cantidad de momento angular). Dichas condiciones de transformación son expresadas como:
+
+$$ \vec{p} \quad \xrightarrow{P} \quad -\vec{p} \quad , \quad \vec{J} \quad \xrightarrow{P} \quad \vec{J} $$
+
+Ambos transforman como vectores bajo rotación. Para el caso de cantidades escalares se tiene que se denominan escalares si no cambian su signo bajo reflexiones espaciales, como es el caso del tiempo o la norma de un vector, y se denominan pseudoescalares si cambian su signo bajo reflexiones espaciales, como es el caso de $\vec{p}\cdot \vec{J}$. Por lo que se tiene que un 4-vector polar y un 4-vector axial están dados por
+
+$$ V^{\mu} \quad \xrightarrow{P} \quad V_{\mu} \quad , \quad A^{\mu} \quad \xrightarrow{P} \quad -A_{\mu} $$
+
+Para el estado de una partícula se tiene que, al aplicar el operador de paridad $P$, transforma como(\cite{langacker2017standard})
+
+$$ P\ket{\vec{p},s} = \eta_P \ket{-\vec{p}, s} \quad \text{o} \quad P\ket{\vec{p},h} = \eta_P \ket{-\vec{p}, -h} $$
+
+en donde $s$ representa la componente del spin en un eje determinado y $h$ la helicidad. El factor $\eta_P$ es denominado paridad intrínseca y depende de cada partícula, puede tomar los valores $\eta_P =\pm 1$ para cumplir la condición $P^2=I$. Una invarianza en el lagrangiano puede ser expresada en términos del operador como
+
+$$ P\mathcal{L}(t, \vec{x})P^{-1} = \mathcal{L}(t, -\vec{x}) $$
+
+Por ejemplo para un campo escalar complejo
+
+$$ \mathcal{L} = (\partial_{\mu}\phi)^{\dagger}(\partial^{\mu}\phi) - m^2\phi^{\dagger}\phi $$
+
+se tiene que
+
+$$ P\phi(t, \vec{x})P^{-1} = \phi(t, -\vec{x}) $$
+
+que deja como inmediata la invarianza del segundo término. Para la derivada del primer término se tiene(\cite{langacker2017standard}):
+
+$$ \partial_{\mu}\phi(x) \quad \rightarrow \quad \eta_P \partial^{\mu}'\phi(x') $$
+
+donde $x' = (t,-\vec{x})$. Con lo que se obtiene $|\partial_{\mu}\phi(x)|^2\rightarrow |\partial_{\mu}'\phi(x')|^2$, dejando la expresión invariante. Para el caso de una partícula libre de Dirac:
+
+$$ \mathcal{L} = \bar{\psi}(i\gamma^{\mu}\partial_{\mu} - m)\psi $$
+
+se debe tener que el término $P\psi(t,\vec{x})P^{-1}$ transforma tal que
+
+$$ P\bar{\psi}(t,\vec{x})\psi(t,\vec{x})P^{-1} = \bar{\psi}(t,\vec{-x})\psi(t,\vec{-x}) $$
+
+y 
+
+$$ P\bar{\psi}(t,\vec{x})\gamma^{\mu} \psi(t,\vec{x})P^{-1} = \bar{\psi}(t,\vec{-x})\gamma_{\mu} \psi(t,\vec{-x}) $$
+
+con lo que el índice es bajado en el factor gamma y se compensa con el índice subido en la derivada parcial, de tal forma que
+
+$$ \bar{\psi}(x)\slashed{\partial}\psi(x) = \bar{\psi}(x')\slashed{\partial}'\psi(x') $$
+
+estas condiciones de transformación que establecen una simetría para el lagrangiano son satisfechas si se tiene
+
+$$ P\psi(x)P^{-1} = \gamma^0 \psi(x') $$
+
+$$ P\bar{\psi}(x)P^{-1} = (\gamma^0 \psi(x'))^{\dagger}\gamma^0 = \psi(x')^{\dagger}\gamma^0 \gamma^0 = \bar{\psi}(x')\gamma^0 $$
