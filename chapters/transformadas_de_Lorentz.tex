@@ -1,0 +1,193 @@
+\chapter{Tranformaciones de Lorentz}
+
+Se denomina transformación de Lorentz a toda transformación de coordenadas que deje invariante el diferencial cuadrado de espacio-tiempo
+
+$$ ds^2 = dx_{\mu}dx^{\mu} = g_{\mu\nu}dx^{\mu}dx^{\nu} = (dt)^2 - (dx)^2 -(dy)^2 -(dz)^2 $$
+
+en donde se ha usado la métrica en el vacío (+,-,-,-). Tomando la transformación de coordenadas $x^{'\mu} = \Lambda_{\quad\nu}^{\mu}x^{\nu}$ los diferenciales transforman como $dx^{'\mu} = \Lambda_{\quad\nu}^{\mu}dx^{\nu}$ por lo que $ds^2$ transforma
+
+$$ ds^{'2} = dx^{'\mu}dx_{\mu}^{'} = g_{\mu\nu}dx^{'\mu}dx^{'\nu} = g_{\mu\nu} \Lambda_{\quad\rho}^{\mu}dx^{\rho} \Lambda_{\quad\sigma}^{\nu}dx^{\sigma} = g_{\mu\nu}\Lambda_{\quad\rho}^{\mu}\Lambda_{\quad\sigma}^{\nu} dx^{\rho}dx^{\sigma} $$
+
+por lo que se obtiene
+
+$$ g_{\rho\sigma} = g_{\mu\nu}\Lambda_{\quad\rho}^{\mu}\Lambda_{\quad\sigma}^{\nu} $$
+
+tomando la transformación de Lorentz como perturbaciones alrededor de la métrica $\Lambda_{\hspace{0.2cm}\nu}^{\mu} = \delta_{\hspace{0.2cm}\nu}^{\mu} + \omega_{\hspace{0.2cm}\nu}^{\mu}$
+
+$$ g_{\mu\nu}\Lambda_{\quad\rho}^{\mu}\Lambda_{\quad\sigma}^{\nu} = g_{\mu\nu}(\delta_{\hspace{0.2cm}\rho}^{\mu} + \omega_{\hspace{0.2cm}\rho}^{\mu})(\delta_{\hspace{0.2cm}\sigma}^{\nu} + \omega_{\hspace{0.2cm}\sigma}^{\nu}) = g_{\rho\sigma} + \omega_{\rho\sigma} +\omega_{\sigma\rho} + \mathcal{O}(\omega^2) $$
+
+considerando únicamente factores a primer orden se obtiene
+
+\begin{equation}
+    \omega_{\mu\nu} + \omega_{\nu\mu} = 0
+    \label{oas}
+\end{equation}
+
+que el factor $\omega$, constituido por 4x4=16 componentes solo cuenta con 6 de ellos independientes: tres corresponden al boost y tres a las rotaciones. Reescribiendo en término de las matrices antisimétricas
+
+$$ \omega_{\rho\sigma} = \omega_{\mu\nu}(M^{\mu\nu})_{\rho\sigma} \quad,\quad \text{con}\quad \mu>\nu $$
+
+con
+
+$$ (M^{\mu\nu})_{\rho\sigma} = g_{\hspace{0.2cm}\rho}^{\mu}g_{\hspace{0.2cm}\sigma}^{\nu} - g_{\hspace{0.2cm}\rho}^{\nu}g_{\hspace{0.2cm}\sigma}^{\mu} $$
+
+como $(M^{\mu\nu})_{\rho\sigma}$ es antisimétrico para el intercambio de los índices $\mu$ y $\nu$ y se tiene la relación de la ecuación \ref{oas}, la suma que define $\omega$ es igual para $\mu>\nu$ tanto como para $\mu<\nu$, por lo que se tiene
+
+$$ \omega_{\rho\sigma} = \frac{1}{2}\omega_{\mu\nu}(M^{\mu\nu})_{\rho\sigma} $$
+
+al ser $(M^{\mu\nu})_{\rho\sigma}$ antisimétrico posee seis componentes (matrices) independientes, que conviene agrupar en dos
+
+$$ K_i = (K_i)_{\rho\sigma} = (M^{0i})_{\rho\sigma} \quad , \quad L_i = (L_i)_{\rho\sigma} = (M^{ij})_{\rho\sigma} $$
+
+La representación matricial de $K$ y $L$ es
+
+\[
+K_1 = \begin{pmatrix}
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{pmatrix}, \quad
+K_2 = \begin{pmatrix}
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{pmatrix}, \quad
+K_3 = \begin{pmatrix}
+0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+\end{pmatrix},
+\]
+
+\[
+L_1 = \begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & -1 \\
+0 & 0 & 1 & 0 \\
+\end{pmatrix}, \quad
+L_2 = \begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+\end{pmatrix}, \quad
+L_3 = \begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{pmatrix}.
+\]
+
+estas matrices cumplen las relaciones de conmutación
+
+\begin{equation}
+    [L_i, L_j] = \epsilon_{ijk}L_k \quad , \quad
+    [L_i, K_j] = \epsilon_{ijk}K_k \quad , \quad
+    [K_i, K_j] = -\epsilon_{ijk}L_k
+\end{equation}
+
+Para una rotación de un ángulo $\Delta \theta$ alrededor del eje z viene dada por
+
+\begin{equation}
+    \begin{pmatrix}
+        t' \\
+        x' \\
+        y' \\
+        z' \\
+    \end{pmatrix} = \begin{pmatrix}
+        t \\
+        x-\Delta\theta y \\
+        y + \Delta\theta x \\
+        z
+    \end{pmatrix}=\begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & -\Delta\theta & 0 \\
+        0 & \Delta\theta & 1 & 0 \\
+        0 & 0 & 0 & 1 \\
+    \end{pmatrix}\begin{pmatrix}
+        t \\
+        x \\
+        y \\
+        z \\
+    \end{pmatrix}
+\end{equation}
+
+$$ \vec{x'} = (I + \Delta\theta L_3)\vec{x} $$
+
+teniendo la rotación de un ángulo $\theta$ mediante $n$ sucesivas rotaciones de ángulos infinitesimales $\Delta\theta = \theta/n$ cuando $n$ tiende a infinito:
+
+$$ \vec{x'} = \lim_{n \to \infty} \left( I + \frac{\theta}{n}L_3 \right)^n \vec{x} = e^{\theta L_3}\vec{x} $$
+
+por lo que una rotación general viene dada por
+
+$$ \vec{x'} = e^{\vec{\theta}\cdot \vec{L}}\vec{x} $$
+
+siendo ésta la rotación alrededor del eje dado por el vector $\vec{\theta} = (\theta_1, \theta_2, \theta_3)$ un ángulo de $\theta = |\vec{\theta}|$. Para el caso de un boost se tiene que para valores pequeños de la velocidad\footnote{Valores pequeños respecto a la velocidad de la luz.} a lo largo del eje x, $\xi$, la matriz de transformación toma la forma
+
+teniendo
+
+$$ \Lambda = \begin{pmatrix}
+    1 & \xi & 0 & 0 \\
+    \xi & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 \\
+\end{pmatrix} = I + \xi\cdot K_1$$
+
+para un valor $\xi$ constituido por $n$ boost infinitesimales de valores $\xi/n$ se tiene
+
+$$ \Lambda = \lim_{n \to \infty} \left( I + \frac{\xi}{n}K_1 \right)^n = e^{\xi K_1} $$
+
+como $K_3^2 = I$, la expansión en serie de Taylor de $\Lambda$
+
+$$ \Lambda = I + \xi K_3 + \frac{\xi^2}{2!}K_1^2 + \frac{\xi^3}{3!}K_1^3 + ... $$
+
+$$ \Lambda = \left( 1 + \frac{\xi^2}{2!} + ... \right)I + \left( \xi + \frac{\xi^3}{3!} + ... \right)K_1 $$
+
+$$ \Lambda = \text{cosh}\xi I + \text{senh}\xi K_1 $$
+
+Para aplicaciones en la ecuación de Dirac es necesario una representación de las transformaciones de Lorentz apropiada para los spinores, $S(\Lambda)$. Para ello, se introduce la representación de spinor,con lo que se introduce el álgebra de Clifford:
+
+$$ \{ \gamma^{\mu}\gamma^{\nu} + \gamma^{\nu}\gamma^{\mu} \} = 2g^{\mu\nu} $$
+
+y definiendo $S^{\mu\nu}$ mediante el conmutador
+
+$$ S^{\mu\nu} = \frac{1}{4}[\gamma^{\rho}\gamma^{\sigma} ] = \frac{1}{4}(\gamma^{\mu}\gamma^{\nu} - \gamma^{\nu}\gamma^{\mu}) $$
+
+$$ S^{\mu\nu} = \frac{1}{4}(\gamma^{\mu}\gamma^{\nu} + \gamma^{\mu}\gamma^{\nu} - \gamma^{\mu}\gamma^{\nu} - \gamma^{\nu}\gamma^{\mu}) = \frac{1}{4}(2\gamma^{\mu}\gamma^{\nu} - 2g^{\mu\nu}) $$
+
+$$ S^{\mu\nu} = \frac{1}{2}\gamma^{\mu}\gamma^{\nu} - \frac{1}{2}g^{\mu\nu} $$
+
+se tiene
+
+$$ S(\Lambda) = \text{exp}\left(\frac{1}{2}\omega_{\mu\nu}S^{\mu\nu}\right) $$
+
+como $\omega$ es antisimétrico, los valores de $S^{\mu\nu}$ con $\mu=\nu$ no aparecen en la transformada de Lorentz. Por lo que, para el caso de las rotaciones, con $\omega_{ij} = -\epsilon_{ijk}\beta^{k} $ se obtiene
+
+$$ \frac{1}{2}\omega_{ij} S^{ij} = -\frac{1}{4} \epsilon_{ijk}\beta^{k} \begin{pmatrix}
+    0 & \sigma^{i} \\
+    -\sigma^{i} & 0 \\
+\end{pmatrix}\begin{pmatrix}
+    0 & \sigma^{j} \\
+    -\sigma^{j} & 0 \\
+\end{pmatrix} $$
+
+$$ \frac{1}{2}\omega_{ij} S^{ij} = \frac{1}{4}\epsilon_{ijk}\beta^{k} i\epsilon^{ijm}\begin{pmatrix}
+    0 & \sigma_{m} \\
+    \sigma_{m} & 0 \\
+\end{pmatrix} = \frac{i}{2}\delta_{k}^{m}\beta^{k}\begin{pmatrix}
+    0 & \sigma_{m} \\
+    \sigma_{m} & 0 \\
+\end{pmatrix} = \frac{i}{2}\beta^{m} \alpha_{m} = \frac{i}{2}\vec{\beta}\cdot \vec{\alpha} $$
+
+por lo que la transformación de Lorentz del spinor queda
+
+$$ S(\Lambda) = \text{exp}\left( \frac{i}{2}\vec{\beta}\cdot\vec{\alpha} \right) $$
+
+$$ S(\Lambda) = \text{cos}\frac{\beta}{2}I + i(\vec{\beta}\cdot\vec{\alpha})\text{sen}\frac{\beta}{2} $$
+
+por lo que una rotación de $2\pi$ no vuelve el spinor a su forma original sino que lo cambia de signo. 
